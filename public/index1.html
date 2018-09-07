@@ -1,0 +1,644 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>SneakerShop</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+</head>
+
+<body>
+
+  <main id="app">
+
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Sneaker<span class="logo_colour">Shoes</span></a></h1>
+          <h2>Tout vos rêves deviennent réalité chez nous</h2>
+        </div>
+      </div>
+
+      <nav>
+        <div id="menubar">
+          <ul id="menu">
+            <li> <a v-on:click="currentPage = 'home'">Home</a></li>
+            <li ><a href="login.html"> Logout</a></li>
+            <li><a v-on:click="currentPage = 'who'">Qui sommes-nous ?</a> </li>
+            <li><a v-on:click="currentPage = 'panier'">Panier</a> </li>
+
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <section v-if="currentPage === 'home'" id="home">
+
+      <div id="main">
+        <div id="site_content">
+          <div id="content">
+            <h1>Bienvenue chez SneakerShop</h1>
+            <p>SneakerShop est une boutique en ligne dans le domaine de chaussures de sport haut de gamme et de mode urbaine tendance, nous te proposons toujours les derniers modeles de sneakers des plus grandes marques..</p>
+            <p>Si tu es un fan de sneakers, n'hesites pas... SneakerShop est fait pour toi !</p>
+
+            <p>Rejoins-nous vite sur SneakerShoes.</p>
+            <h2>Choisi ta marque:</h2>
+
+            <ul>
+              <li><a v-on:click="currentPage = 'PAGENIKE'">- Nike </a></li>
+              <li> <a v-on:click="currentPage = 'PAGEJORDAN'" >- Jordan</a></li>
+              <li> <a v-on:click="currentPage = 'PAGEADIDAS'" >- Adidas</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="footer">
+          <p>Since 2018 </p>
+          <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+          <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+          sneakerroom@gmail.com</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section v-else-if="currentPage === 'who'" id="who">
+
+      <div id="main">
+        <div id="site_content">
+          <div id="content">
+            <h1>SneakerShoes, la plateforme en ligne des fans de sneakers</h1>
+            <p>SneakerShop est une boutique en ligne dans le domaine de chaussures de sport haut de gamme et de mode urbaine tendance, nous te proposons toujours les derniers modeles de sneakers des plus grandes marques..</p>
+            <p>Si tu es un fan de sneakers, n'hesites pas... SneakerShop est fait pour toi !</p>
+
+            <p>Rejoins-nous vite sur SneakerShoes.</p>
+            <h2>Nos marques partenaires: </h2>
+
+            <ul>
+              <li>Nike</li>
+              <li>Jordan</li>
+              <li>Adidas</li>
+              <br>
+              <li> <a v-on:click="currentPage = 'home'"> -> Go to the Shop</a>
+
+              </ul>
+            </div>
+          </div>
+          <div id="footer">
+            <p>Since 2018 </p>
+            <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+            <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+            sneakerroom@gmail.com</a>.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <section v-else-if="currentPage === 'login'" id="login">
+
+        <div id="main">
+         <div id="site_content">
+          <div class="login-page">
+            <div class="form">
+              <form class="register-form">
+                <input type="text" placeholder="user name"/>
+                <input type="password" placeholder="password"/>
+                <input type="button" value="Create" onclick="clicked()">
+                <p class="message"> Already Register? <a href="#">Login</a> 
+                </p>
+              </form>
+
+              <form class="login-form">
+                <input type="text" id="username" placeholder="Username"/>
+                <input type="password" id="password" placeholder="Password"/>
+                <input type="button" value="Log on" onclick="clicked()">
+                <p class="message">Not Register? <a href="#">Register</a> </p>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+        <div id="footer">
+          <p>Since 2018 </p>
+          <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+          <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+          sneakerroom@gmail.com</a>.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <section v-else-if="currentPage === 'PAGENIKE'" id="PAGENIKE" >
+
+      <div id="main">
+        <div id="site_content">
+          <h1> Nike shoes : </h1>
+          <p> Cop or Pass ? </p>
+          <ul>
+            <li v-on:click="currentPage = 'pageproduitnike'" >Nike Air Max One</li>
+            <br><br>
+            <li v-on:click="currentPage = 'pageproduitnike1'" >Nike Air Force</li>
+          </ul>
+        </div>
+        <div id="footer">
+          <p>Since 2018 </p>
+          <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+          <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+          sneakerroom@gmail.com</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section v-else-if="currentPage === 'PAGEJORDAN'" id="PAGEJORDAN">
+
+      <div id="main">
+        <div id="site_content">
+          <h1> Jordan shoes : </h1>
+          <p> Cop or Pass ? </p>
+          <br><br>
+          <ul>
+            <li v-on:click="currentPage = 'pageproduitjordan'" >Jordan 1 retro</li>
+            <br><br>
+            <li v-on:click="currentPage = 'pageproduitjordan1'" >Jordan 5 retro</li>
+          </ul>
+        </div>
+        <div id="footer">
+          <p>Since 2018 </p>
+          <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+          <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+          sneakerroom@gmail.com</a>.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <section v-else-if="currentPage === 'PAGEADIDAS'" id="PAGEADIDAS">
+
+      <div id="main">
+        <div id="site_content">
+          <h1> Adidas shoes : </h1>
+          <p> Cop or Pass ? </p>
+          <br><br>
+          <ul>
+            <li v-on:click="currentPage = 'pageproduitadidas'" >Adidas yeezy 350</li>
+            <br><br><br>
+            <li v-on:click="currentPage = 'pageproduitadidas1'" >Adidas ultraboost</li>
+          </ul>
+        </div>
+        <div id="footer">
+          <p>Since 2018 </p>
+          <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+          <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+          sneakerroom@gmail.com</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section v-else-if="currentPage === 'pageproduitnike'" id="pageproduitnike">
+
+      <div id="main">
+        <div id="site_content">
+
+          <h1> THE best way to cop your pair ! </h1> <br>
+
+          <center>
+            <div v-for="(produit, index) of produit" v-if = "index <=1" class="row">
+              <h5 class="card-title">{{ produit.name }} {{ produit.prix }}</h5>
+
+              <img v-bind:src=produit.src style="width:300;height:175px;" alt="nikeshoe"  />
+              <br><br>
+
+              <button v-on:click="ajouterPanier(produit, index)" type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+              <br><br>
+            </div>
+          </center> 
+          <center>
+
+            <!-- 
+            <p> Air max one "watermelon" : price : 155 € </p>
+             <img id="images" class="card-img-top" v-bind:src=produit.src alt="Card image cap" />
+            <img src="stylesheets/airmaxwater.jpeg" style="width:300px;height:275px;" alt="nikeshoe" /> <br><br>
+            <li v-on:click="currentPage = 'panier'" >Add to card</li>
+
+          -->
+
+            <!--
+
+            <div v-for="(produit, index) of produit" class="row">
+            <h5 class="card-title">{{ produit.name }}</h5>
+            <img src="stylesheets/airmaxwater.jpeg" style="width:300px;height:275px;" alt="nikeshoe" /> <br><br>
+            <button v-on:click="ajouterPanier(produit, index)" type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+
+          -->
+          <br><br>
+        </center>  
+      </div>
+      <div id="footer">
+        <p>Since 2018 </p>
+        <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+        <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+        sneakerroom@gmail.com</a>.</p>
+      </div>
+    </div> 
+
+  </section>
+
+  <section v-else-if="currentPage === 'pageproduitnike1'" id="pageproduitnike1">
+
+    <div id="main">
+      <div id="site_content">
+        <h1> THE best way to cop your pair ! </h1> <br /><br />
+
+        <center>
+          <div v-for="(produit, index) of produit" v-if="index > 1 && index <=3 " class="row">
+            <h5 class="card-title">{{ produit.name }} {{ produit.prix }}</h5>
+
+            <img v-bind:src=produit.src style="width:300;height:175px;" alt="nikeshoe"  />
+            <br><br>
+
+            <button v-on:click="ajouterPanier(produit, index)" type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+            <br><br>
+          </div>
+        </center> 
+      </div>
+      <div id="footer">
+        <p>Since 2018 </p>
+        <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+        <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+        sneakerroom@gmail.com</a>.</p>
+      </div>
+    </div>   
+  </section>
+
+  <section v-else-if="currentPage === 'pageproduitjordan'" id="pageproduitjordan">
+
+
+    <div id="main">
+      <div id="site_content">
+        <h1> THE best way to cop your pair ! </h1> <br /><br />
+
+        <center>
+          <div v-for="(produit, index) of produit" v-if="index > 3 && index <= 5" class="row">
+            <h5 class="card-title">{{ produit.name }} {{ produit.prix }}</h5>
+
+            <img v-bind:src=produit.src style="width:300;height:175px;" alt="nikeshoe"  />
+            <br><br>
+
+            <button v-on:click="ajouterPanier(produit, index)" type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+            <br><br>
+          </div>
+        </center> 
+      </div>
+      <div id="footer">
+        <p>Since 2018 </p>
+        <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+        <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+        sneakerroom@gmail.com</a>.</p>
+      </div>
+    </div>   
+
+  </section>
+
+  <section v-else-if="currentPage === 'pageproduitjordan1'" id="pageproduitjordan1">
+
+
+    <div id="main">
+      <div id="site_content">
+
+        <h1> THE best way to cop your pair ! </h1> 
+
+
+        <center>
+          <div v-for="(produit, index) of produit" v-if="index > 5 && index <=7 " class="row">
+            <h5 class="card-title">{{ produit.name }} {{ produit.prix }}</h5>
+
+            <img v-bind:src=produit.src style="width:300;height:175px;" alt="nikeshoe"  />
+            <br><br>
+
+            <button v-on:click="ajouterPanier(produit, index)" type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+            <br><br>
+          </div>
+        </center>   
+      </div>
+      <div id="footer">
+        <p>Since 2018 </p>
+        <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+        <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+        sneakerroom@gmail.com</a>.</p>
+      </div>
+    </div>   
+
+  </section>
+
+  <section v-else-if="currentPage === 'pageproduitadidas'" id="pageproduitadidas">
+
+   <div id="main">
+    <div id="site_content">
+
+
+      <h1> THE best way to cop your pair ! </h1>
+
+      <center>
+       <div v-for="(produit, index) of produit" v-if="index >7 && index <=9 " class="row">
+        <h5 class="card-title">{{ produit.name }} {{ produit.prix }}</h5>
+
+        <img v-bind:src=produit.src style="width:300;height:175px;" alt="nikeshoe"  />
+        <br><br>
+
+        <button v-on:click="ajouterPanier(produit, index)" type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+        <br><br>
+      </div>
+    </center>   
+  </div>
+  <div id="footer">
+    <p>Since 2018 </p>
+    <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+    <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+    sneakerroom@gmail.com</a>.</p>
+  </div>
+</div>   
+
+</section>
+
+<section v-else-if="currentPage === 'pageproduitadidas1'" id="pageproduitadidas1">
+
+  <div id="main">
+    <div id="site_content">
+
+      <h1> THE best way to cop your pair ! </h1> 
+      <center>
+        <div v-for="(produit, index) of produit" v-if="index >9 && index <=11 " class="row">
+          <h5 class="card-title">{{ produit.name }} {{ produit.prix }}</h5>
+
+          <img v-bind:src=produit.src style="width:300;height:175px;" alt="nikeshoe"  />
+          <br><br>
+
+          <button v-on:click="ajouterPanier(produit, index)" type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+          <br><br>
+        </div>
+      </center>   
+
+    </div>
+    <div id="footer">
+      <p>Since 2018 </p>
+      <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+      <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+      sneakerroom@gmail.com</a>.</p>
+    </div>
+  </div>   
+
+</section>
+
+
+<section v-else-if="currentPage === 'panier'" id="panier">
+
+ <div id="main">
+  <div id="site_content">
+
+    <center>
+
+      <div v-for="produit in panier" v-if="produit.stock >= 1">
+
+       <table>
+
+        <tr>
+          <td> <strong>{{ produit.name }}</strong></td>
+          <td> <p> Quantité : {{ produit.stock }}</p> </td>
+          <td><p> Sous-total : {{ produit.soustotal }} €</p></td>
+           <td><button class="btn btn-danger btn-block" @click="supprimer(index)"><i class="fa fa-trash-o fa-lg"></i>Supprimer</button></td>
+           
+        </tr>
+
+      </table>
+
+    </div></center>
+    <div>
+      <center><strong>TOTAL : {{ panier.total }} €</strong></center>
+      <br> <br> 
+    </div>
+
+    <center><input type="button" value="Payer" onclick="payer()"></center>
+    <br><br>
+
+  </div>
+  <div id="footer">
+    <p>Since 2018 </p>
+    <p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+    <p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+    sneakerroom@gmail.com</a>.</p>
+  </div>
+</div> 
+
+</section>
+
+
+
+</main>
+
+<!-- Script -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      currentPage: 'home',
+      totalPanier: 0,
+      produit: [{
+        name:'Nike Air Max Just do it: ',
+        prix: 220,
+        src: 'stylesheets/airmaxone.png',
+        stock:10
+      }, {
+        name:'Nike Air Max watermelon: ',
+        prix: 150,
+        src: 'stylesheets/airmaxwater.jpeg',
+        stock:10,
+      },
+
+      {
+        name:'Nike Air Force Off White : ',
+        prix: 1150,
+        src: 'stylesheets/af1offwhite.png',
+        stock:10
+      }, {
+        name:'Nike Air Force Travis Scott : ',
+        prix: 150,
+        src: 'stylesheets/af1travis.png',
+        stock:10,
+      },
+
+      {
+        name:'Jordan 1 retro "Royal Blue": ',
+        prix: 375,
+        src: 'stylesheets/royalblue.png',
+        stock:10,
+      }, {
+        name:'Jordan 1 retro "Shatered backboard satin" : ',
+        prix: 800,
+        src: 'stylesheets/shatteredbackboard.png',
+        stock:10,
+      },
+
+      {
+        name:'Jordan 5 retro "Supreme" : ',
+        prix: 400,
+        src: 'stylesheets/supreme.png',
+        stock:10,
+      }, {
+        name:'Jordan 5 retro " Doerbecher V " : ',
+        prix: 1800,
+        src: 'stylesheets/db5.png',
+        stock:10,
+      },
+
+      {
+        name:'Adidas yeezy "bred" :  ',
+        prix: 400,
+        src: 'stylesheets/bred.png',
+        stock:10,
+      }, {
+        name:'Adidas yeezy "yebra" : ',
+        prix: 900,
+        src: 'stylesheets/yebra.png',
+        stock:10,
+      },
+
+      {
+        name:'Adidas ultraboost x undefeated :  ',
+        prix: 400,
+        src: 'stylesheets/undefeated.png',
+        stock:10,
+      }, {
+        name:'Adidas ultraboost : ',
+        prix: 200,
+        src: 'stylesheets/ultraboost.png',
+        stock:10,
+      }
+
+      ],         
+
+      panier: [{
+        name: 'Nike Air Force Off White: ',
+        prix: 220,
+        stock: 0,
+        soustotal : 0,
+      },
+      {
+        name: 'Nike Air Force Off White1: ',
+        prix: 150,
+        stock: 0,
+        soustotal : 0,
+      },
+
+      {
+        name: 'Nike Air Force Off White : ',
+        prix: 1150,
+        stock: 0,
+        soustotal : 0,
+      },
+      {
+        name: 'Nike Air Force Travis Scott : ',
+        prix: 150,
+        stock: 0,
+        soustotal : 0,
+      },
+
+      {
+        name: 'Jordan 1 retro "Royal Blue":  ',
+        prix: 375,
+        stock: 0,
+        soustotal : 0,
+      },
+      {
+        name: 'Jordan 1 retro "Shatered backboard satin" : ',
+        prix: 800,
+        stock: 0,
+        soustotal : 0,
+      },
+
+      {
+        name: 'Jordan 5 retro "Supreme" :  ',
+        prix: 400,
+        stock: 0,
+        soustotal : 0,
+      },
+      {
+        name: 'Jordan 5 retro " Doerbecher V " : ',
+        prix: 1800,
+        stock: 0,
+        soustotal : 0,
+      },
+
+      {
+        name: 'Adidas yeezy "bred" :  ',
+        prix: 400,
+        stock: 0,
+        soustotal : 0,
+      },
+      {
+        name: 'Adidas yeezy "yebra" : ',
+        prix: 900,
+        stock: 0,
+        soustotal : 0,
+      },
+
+      {
+        name: 'Adidas ultraboost x undefeated :  ',
+        prix: 400,
+        stock: 0,
+        soustotal : 0,
+      },
+      {
+        name: 'Adidas ultraboost : ',
+        prix: 200,
+        stock: 0,
+        soustotal : 0,
+      }
+
+      ],
+    },
+
+    methods: {
+      ajouterPanier: function (produit, index) {
+
+        if(produit.stock > 0) {
+          this.panier[index].stock = this.panier[index].stock + 1,
+          produit.stock = produit.stock - 1,
+          this.panier[index].soustotal = produit.prix * this.panier[index].stock,
+          this.panier.total = this.panier[0].soustotal + this.panier[1].soustotal + this.panier[2].soustotal + this.panier[3].soustotal + this.panier[4].soustotal + this.panier[5].soustotal + this.panier[6].soustotal + this.panier[7].soustotal + this.panier[8].soustotal + this.panier[9].soustotal + this.panier[10].soustotal + this.panier[11].soustotal
+        } else {
+          alert("Rupture de Stock");
+
+        }
+      },
+      supprimer: function(index) {
+        this.panier.splice(index, 1);
+
+      }
+    }
+
+  })
+</script>
+
+
+<script type="text/javascript" src="javascripts/main.js"> </script>
+
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+
+<script>
+  $('.message a').click(function() {
+    $('form').animate({height: "toggle", opacity: "toggle"}, "slow"); 
+
+  });
+</script> 
+
+
+</body>
+</html>

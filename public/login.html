@@ -1,0 +1,79 @@
+<html>
+<head> 
+	<title>Login and Registration Form Design</title>
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+
+<body>
+
+	    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Sneaker<span class="logo_colour">Shoes</span></a></h1>
+          <h2>Tout vos reves deviennent realite chez nous</h2>
+        </div>
+      </div>
+
+      <nav>
+        <ul id="menu">
+          <li><a href="index.html">Home</li>
+          <li><a href="index.html">Qui sommes-nous ?</li>
+
+        </ul>
+      </nav>
+    </div>
+
+	<div id="main">
+		<div id="site_content">
+			   <center>
+            <h1><strong>Username: assim</strong></h1>
+            <h1><strong>Password: hanifa</strong></h1>
+          </center>
+			<div class="login-page">
+				<div class="form">
+					<form class="register-form">
+						<input type="text" placeholder="user name"/>
+						<input type="password" placeholder="password"/>
+						<input type="button" value="Create" onclick="clicked()">
+						<p class="message"> Already Register? <a href="#">Login</a> 
+						</p>
+					</form>
+
+					<form class="login-form">
+						<input type="text" id="username" placeholder="Username"/>
+						<input type="password" id="password" placeholder="Password"/>
+						<input type="button" value="Log on" onclick="clicked()">
+						<p class="message">Not Register? <a href="#">Register</a> </p>
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+		<div id="footer">
+			<p>Since 2018 </p>
+			<p>Join us in Twitter now ! <a href="https://twitter.com/flightclub?lang=fr"> https://twitter.com/flightclub?lang=fr </a>.</p> 
+			<p>Contact information: <a href="mailto:choukroun@et.esiea.fr">
+			sneakerroom@gmail.com</a>.</p>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="javascripts/main.js"> </script>
+
+	<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+
+	
+
+	<script>
+		$('.message a').click(function() {
+			$('form').animate({height: "toggle", opacity: "toggle"}, "slow");	
+
+		});
+	</script>
+
+
+</body>
+
+</html>
