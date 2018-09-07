@@ -406,7 +406,7 @@
 
     <center>
 
-      <div v-for="produit in panier" v-if="produit.stock >= 1">
+      <div v-for="(produit,index) of panier" v-if="produit.stock >= 1">
 
        <table>
 
@@ -422,7 +422,7 @@
 
     </div></center>
     <div>
-      <center><strong>TOTAL : {{ panier.total }} €</strong></center>
+      <center><strong>TOTAL : {{ totalPanier }} €</strong></center>
       <br> <br> 
     </div>
 
@@ -616,15 +616,19 @@
           this.panier[index].stock = this.panier[index].stock + 1,
           produit.stock = produit.stock - 1,
           this.panier[index].soustotal = produit.prix * this.panier[index].stock,
-          this.panier.total = this.panier[0].soustotal + this.panier[1].soustotal + this.panier[2].soustotal + this.panier[3].soustotal + this.panier[4].soustotal + this.panier[5].soustotal + this.panier[6].soustotal + this.panier[7].soustotal + this.panier[8].soustotal + this.panier[9].soustotal + this.panier[10].soustotal + this.panier[11].soustotal
+          this.totalPanier = this.panier[0].soustotal + this.panier[1].soustotal + this.panier[2].soustotal + this.panier[3].soustotal + this.panier[4].soustotal + this.panier[5].soustotal + this.panier[6].soustotal + this.panier[7].soustotal + this.panier[8].soustotal + this.panier[9].soustotal + this.panier[10].soustotal + this.panier[11].soustotal
         } else {
           alert("Rupture de Stock");
 
         }
       },
       supprimer: function(index) {
-        this.panier.splice(index, 1);
-
+        this.panier[index].stock -= 1;
+        this.totalPanier = 0;
+        this.panier.forEach(item =>{
+          this.totalPanier = this.totalPanier + (item.stock * item.prix);
+        })
+        
       }
     }
 
