@@ -612,7 +612,6 @@
 
     methods: {
       ajouterPanier: function (produit, index) {
-
         if(produit.stock > 0) {
           this.panier[index].stock = this.panier[index].stock + 1,
           produit.stock = produit.stock - 1,

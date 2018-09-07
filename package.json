@@ -1,11 +1,12 @@
 {
   "name": "sneaker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Projet web 4a",
+  "repository" : "https://github.com/ChoukrounWilliam/PROJET_WEB_4A_CHOUKROUN_HANIFA",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
